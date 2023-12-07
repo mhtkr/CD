@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+#include <string.h>
+
+int main() {
+
+ // Write C code here
+
+ char s[20];
+
+ char *arr[] ={"auto", "break", "case", "char", "continue", "do", "default", "const","double", "else", 
+
+"enum","extern", "for", "if", "goto", "float", "int", "long", "register", "return", "signed", "static", "sizeof", 
+
+"short", "struct", "switch", "typedef", "union", "void", "while","volatile", "unsigned"
+
+};
+
+ printf("Enter the string :");
+
+ scanf("%[^\n]s",&s);
+
+ int length = sizeof(s);
+
+ char * token = strtok(s," ");
+
+while( token != NULL ){
+
+ for(int j = 0;j<32;j++){
+
+ if(!strcmp(token,arr[j])){
+
+ printf("%s is a keyword\n",token);
+
+ }
+
+ }
+
+ token = strtok(NULL, " ");
+
+ }
+
+ return 0;
+
+}
